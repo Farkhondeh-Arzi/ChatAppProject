@@ -1,0 +1,40 @@
+Protocols:
+    commands:
+        1. Register:
+         Client: Make -Option <user:user_name> -Option <pass:password>
+         Server: User Accepted -Option <username:user_name>
+                 ERROR -Option <reason:”str”>
+
+        2. Log in:
+         Client: Connect -Option <user:user_name> -Option <pass:password>
+         Server: Connected -Option <username:#user_name>
+                 ERROR -Option <reason:”str”>
+
+        3. Group:
+         Client: Group -Option <gname:Group_Name>
+         Server: Group -Option <user_name> -Option joined
+                 Group -Option <user_name> -Option Hi
+
+        4. Get Online Users:
+         Client: Users -Option <gname:Group_Name>
+         Server: Users -Option <user_name1> -Option <user_name2> -Option <user_name3> -Option <user_name4>
+
+        6. Send Message To a Group:
+           Client: GM -Option <to:GAPNAME> -Option <message_len:#> -Option <msg>
+           Server: GM -Option <from:username> -Option <to:GAPNAME> -Option <message_len:#> -Option <msg>
+
+        7. Send a message directly:
+           Client: PM -Option <to:user_name> -Option <message_len:#> -Option <msg>
+           Server: PM -Option <from:username> -Option <to:user_name> -Option <message_len:#> -Option <msg>
+
+        8. Leave a Group or Direct chat:
+           Client: End -Option <id: user_name OR GAPNAME>
+           Server: End -Option <user_name> left
+
+        9. Log out:
+           Client: Finish
+           Server: End -Option <user_name> left
+
+
+
+
